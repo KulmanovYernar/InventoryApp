@@ -1,6 +1,6 @@
 package com.example.inventory
 
-import android.os.Build.VERSION_CODES.P
+
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.ViewModelProvider
@@ -53,7 +53,7 @@ class InventoryViewModel(private val itemDao: ItemDao) : ViewModel() {
     fun sellItem(item: Item) {
         if (item.quantityInStock > 0) {
             val newItem = item.copy(quantityInStock = item.quantityInStock - 1)
-            updateItem(item)
+            updateItem(newItem)
         }
     }
 
